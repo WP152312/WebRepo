@@ -57,15 +57,15 @@ public class SignUpServlet {
 		String name=request.getParameter("name");
 		String nickname=request.getParameter("nickname");
 		boolean result=false;
-		if(id.equals("Stoad@sto.ad")&&pw.equals("qwe123")){
+		if(id.equals("asdf@asdf")&&pw.equals("asdf")){
 			result=true;
 		}
 		HttpSession session=request.getSession();
 		if(result){
 			UserVo ud=new UserVo();
 			ud.setId(id);
-			ud.setName("Stoad");
-			ud.setNickname("Stoads");
+			ud.setName("asdf");
+			ud.setNickname("asdf");
 			session.setAttribute("key",ud);
 			RequestDispatcher rd=request.getRequestDispatcher("jsp/signin.jsp");
 			rd.forward(request,response);
