@@ -3,25 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<style>
+	.bgYellow {background-color : yellow;};
+	.bgBlue {background-color : blue;};
+	.bgGreen {background-color : green;};
+</style>
+<script>
+function changeColor(color){
+	var c= document.getElementById("container");
+	c.setAttribute("class",color);
+}
+window.onload=function(){
+	var newNode = document.createElement("p");
+	var txtNode = document.createTextNode("새로운 문단");
+	newNode.appendChild(txtNode);
+	var parNode = document.getElementById("d1");
+	parNode.appendChild(newNode);
+	parNode.removeChild(document.getElementById("p1"));
+}
+</script>
 </head>
 <body>
-
-	<div id="div1">
-	<p id="p1">원래 있던 문단</p>
-	</div>
-	
-	<script>
-	var newNode = document.createElement("p");
-	var textNode = document.createTextNode("새로운 문단");
-	newNode.appendChild(textNode);
-	
-	var div1 = document.getElementById("div1");
-	div1.appendChild(newNode)
-	
-	document.getElementById("p1");
-	div1.removeChild(p1);
-	
-	</script>
-
+<div id="d1"><p id=p1>원래 있던 문단</p></div>
+<button id=btn1 onclick="changeColor('bgYellow')" >노랑</button>
+<button id=btn2 onclick="changeColor('bgBlue')" >파랑</button>
+<button id=btn3 onclick="changeColor('bgGreen')" >초록</button>
+<div id="container">123</div>
 </body>
 </html>

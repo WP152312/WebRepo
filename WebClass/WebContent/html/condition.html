@@ -3,49 +3,39 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-	<script>
-		function showmessage(){
-			
-			if(parseInt(document.getElementById("age").value) <16 || parseInt(document.getElementById("age").value) > 69){
-				document.getElementById("text").innerHTML = "연령 부적합";
-			}
-			else if(document.getElementById("male").checked){
-				if(document.getElementById("weight").value>=50){
-					document.getElementById("text").innerHTML = "헌혈가능합니다.";
+<script>
+window.onload=function(){
+	document.getElementById("chk").onclick=function(){
+		var age=document.getElementById("age").value*1;
+		var wgt=document.getElementById("wgt").value*1;
+		if(16<=age&& age<=69)
+			if(document.getElementById("male").checked){
+				console.log("남자");
+				if(wgt>=50){
+					document.getElementById("res").innerHTML="헌혈 가능";
+					return;
 				}
-				else 
-					document.getElementById("text").innerHTML = "체중 미달";
 			}
-			else if(document.getElementById("female").checked) {
-				if(document.getElementById("weight").value>=45){
-					document.getElementById("text").innerHTML = "헌혈가능합니다.";
+			else if(document.getElementById("female").checked){
+				console.log("여자");
+				if(wgt>=45){
+					document.getElementById("res").innerHTML="헌혈 가능";
+					return;
 				}
-				else document.getElementById("text").innerHTML = "체중 미달";			}
-				
-			
-			
-			
-		}
-	
-	</script>
-	
+			}
+		document.getElementById("res").innerHTML="헌혈 불가능";
+	}
+}
+</script>
 </head>
 <body>
-
-<h1> 헌혈 조건</h1>
-
-	
-
-	나이 : <input type="text" id="age">세<br>
-	성별: 남자 <input type="radio" name="gender" id="male" checked><br>
-	성별 : 여자<input type="radio" name="gender" id ="female"><br>
-	몸무게: <input type="text" id="weight">kg<br>
-	<input type="button" value="헌혈 조건 체크" onclick="showmessage();"><br>
-	<p id="text"></p>
-
-	
-	
-	
-	
+<h1>헌혈 조건 체크</h1>
+나이 : <input id=age type= text size=5> 세<br>
+성별 : 
+남자<input type=radio name=gender id=male checked/>
+여자<input type=radio name=gender id=female /><br>
+몸무게 : <input id=wgt type=text size=5>kg<br>
+<input id=chk type=button value=헌혈조건체크>
+<p id=res>헌혈 가능 여부</p>
 </body>
 </html>

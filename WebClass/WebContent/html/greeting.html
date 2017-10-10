@@ -3,49 +3,27 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-
 <script>
-/**	function korean(){
-	alert("안녕하세요");
+window.onload=function(){
+	document.getElementById("kor").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"안녕하세요\"";
 	}
-	function american(){
-	alert("hello");
+	document.getElementById("US").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"Hello\"";
 	}
-	function chinese(){
-	alert("ni hao");
-	}**/
-	
-	function greeting(nation){
-	if(nation=='k'){
-		document.getElementById("result").innerHTML = "안녕하세요";
+	document.getElementById("Chn").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"Ni Hao\"";
 	}
-	else if(nation=='a'){
-		document.getElementById("result").innerHTML = "hello";
-	}
-	else {
-		document.getElementById("result").innerHTML = "니 하오";
-	}
-	
-	console.log("찍힐까?");
-	
 }
-	
-	
-	</script>
-
-	
+function greeting(nat){
+	document.getElemenyById("nat").onclick()
+}
+</script>
 </head>
 <body>
-
-	각 나라의 인사말
-	<script src="../js/greeting.js">
-	</script>
-	<input type="button" onclick="greeting('k');" value="한국">
-	<input type="button" onclick="greeting('a');" value="미국">
-	<input type="button" onclick="greeting('c');" value="중국">
-	
-	<p id="result">
-	
-
+<p id=how>Each Countries' "Hello"</p>
+<button id=kor>한국</button>
+<button id=US>미국</button>
+<button id=Chn>중국</button>
 </body>
 </html>

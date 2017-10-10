@@ -1,0 +1,19 @@
+@CHARSET "EUC-KR";
+
+.background {
+	background: url('../image/oktagon.jpg') no-repeat center top; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: 100%;
+	background-color:#000000;
+}
+.indexFont{
+	color:#ffffff;
+	margin:0px;
+	max-width:100%;
+	padding:20px;
+}
+.indexFont-Background{
+	background-color:rgba(0,0,0,0.5);
+}
