@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="org.dimigo.vo.UserVo"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +14,15 @@
 <body>
 <div class="container">
 
-  <form class="form-signin" action="/WebClass/login" method="post">
+  <form class="form-signin" action="/WebClass/bloglogin" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" 
+    <% UserVo U = (UserVo)session.getAttribute("key"); 
+    if(U != null) {%> value="<%=U.getId()%>" <% } %> required autofocus>
     
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
-
+    
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
 
@@ -39,8 +41,8 @@
 			request.removeAttribute("error");
 	%>
 	var myModal = $('#mM');
-	myModal.find('.modal-title').text('Login Error');
-	myModal.find('.modal-body').text('Invalid username or password');
+	myModal.find('.modal-title').text('로그인 실패');
+	myModal.find('.modal-body').text('Invalid username');
 	myModal.modal();
 	<%
 		}

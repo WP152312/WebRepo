@@ -67,7 +67,7 @@ public class SignUpServlet {
 			ud.setName("asdf");
 			ud.setNickname("asdf");
 			session.setAttribute("key",ud);
-			RequestDispatcher rd=request.getRequestDispatcher("jsp/signin.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("jsp/login.jsp");
 			rd.forward(request,response);
 		}
 		else{

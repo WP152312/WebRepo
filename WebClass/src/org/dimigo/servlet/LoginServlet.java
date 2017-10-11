@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp 틀린거");
 		rd.forward(request, response);
 	}
 
@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 			UserVo ud=new UserVo();
 			ud.setId(id);
 			ud.setName("asdf");
-			ud.setNickname("asdf");
+			//ud.setNickname("asdf");
 			session.setAttribute("key",ud);
 			RequestDispatcher rd=request.getRequestDispatcher("jsp/home.jsp");
 			rd.forward(request,response);

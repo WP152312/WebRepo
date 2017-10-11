@@ -38,7 +38,7 @@ public class BlogLogoutServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		RequestDispatcher rd= request.getRequestDispatcher("jsp/home.jsp");
+		RequestDispatcher rd= request.getRequestDispatcher("jsp/main.jsp");
 		rd.forward(request, response);
 	}
 
