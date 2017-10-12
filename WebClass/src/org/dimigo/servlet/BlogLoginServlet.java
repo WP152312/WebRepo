@@ -40,17 +40,17 @@ public class BlogLoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String id=request.getParameter("id");
-//		String pw=request.getParameter("pwd"); 	
+		String pw=request.getParameter("pwd"); 	
 		boolean result=false;
-		if(id.equals("test@naver.com")//&&pw.equals("asdf")
+		if(id.equals("test@naver.com")//&&pw.equals("required")
 				){
 			result=true;
 		}
 		HttpSession session=request.getSession();
 		UserVo ud=new UserVo();
 		ud.setId(id);
-		ud.setName("asdf");
-		ud.setNickname("asdf");
+		ud.setName("박정우");
+		ud.setNickname("박정우");
 		session.setAttribute("key",ud);
 		if(result){
 			RequestDispatcher rd=request.getRequestDispatcher("jsp/main.jsp");

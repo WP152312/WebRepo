@@ -55,10 +55,7 @@ function menu_out(e) {
 	      <form action="bloglogout" method=post> 
 	      	<button type="submit" class="dropdown-item">Sign out</button>
 		  </form>
-	       	<div class="dropdown-divider"></div>
-	        <button type="button" class="dropdown-item">Action1</button>
-	        <button type="button" class="dropdown-item">Action2</button>
-	      </div>
+	       	
 	    </li>
 	    </ul>
     <%

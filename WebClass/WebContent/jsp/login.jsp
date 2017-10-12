@@ -21,6 +21,7 @@
     <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" 
     <% UserVo U = (UserVo)session.getAttribute("key"); 
     if(U != null) {%> value="<%=U.getId()%>" <% } %> required autofocus>
+    <input type="password" name="pwd" class="form-control" placeholder="Password" required>
     
     
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
